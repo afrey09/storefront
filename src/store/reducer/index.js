@@ -2,6 +2,7 @@ const initialState = {
   categories: [
     { name: 'electronics', displayName: 'Electronics', description: 'Electronics' },
     { name: 'food', displayName: 'Food', description: 'Food' },
+    { name: 'clothing', displayName: 'Clothing', description: 'Clothing'}
   ],
 
   products: [
@@ -11,18 +12,19 @@ const initialState = {
     { name: 'food1', category: 'food', description: 'Pizza', price: 5, inventorycount: 20 },
     { name: 'food2', category: 'food', description: 'Tacos', price: 10, inventorycount: 25 },
     { name: 'food3', category: 'food', description: 'Burgers', price: 15, inventorycount: 30 },
+    
   ],
   activeCategory: '',
 };
 
-const categoryReducer = (state = initialState, action) => {
+const categoryReducer = (state=initialState, action) => {
   const { type, payload } = action;
   
   switch (type) {
     case 'SET_ACTIVE_CATEGORY':
       return {
         ...state, 
-        activeCategory: action.payload,
+        activeCategory: payload,
         products:initialState.products.filter(product => product.category === payload.name),
 
       }; 
@@ -31,7 +33,7 @@ const categoryReducer = (state = initialState, action) => {
       default:
         return state;
   }
-}
+};
 //actions
 export const set = (category) => {
   return {
@@ -39,12 +41,12 @@ export const set = (category) => {
     payload: category
   }
 };
-export const resetCategory = () => {
-  return {
-    type: 'RESET_CATEGORY',
-    payload: '',
-  }
-};
+// export const resetCategory = () => {
+//   return {
+//     type: 'RESET_CATEGORY',
+//     payload: '',
+//   }
+// };
 
 
 export default categoryReducer;

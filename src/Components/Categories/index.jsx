@@ -1,10 +1,10 @@
 import { Button, ButtonGroup } from '@mui/material';
 import { connect } from 'react-redux';
+// step 1: import the action
 import { set } from '../../store/reducer';
 
-const Categories = () => ({ categories, set }) => {
-  console.log({ categories });
-  console.log({ set });
+const Categories = ({ categories, set }) => {
+ 
   return (
     <>
       <h2>Browse Our Categories</h2>
@@ -13,10 +13,10 @@ const Categories = () => ({ categories, set }) => {
           {
             categories.map((category, idx) => (
               <Button
-                key={idx}
+                key={`categories-${idx}`}
                 color="primary"
                 variant="contained"
-                onClick={() => set(category.name)}
+                onClick={() => set(category)}
               >
                 {category.displayName}
               </Button>

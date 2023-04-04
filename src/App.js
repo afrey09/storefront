@@ -1,7 +1,7 @@
-import Categories from './components/Categories';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Products from './components/Products';
+import Categories from './Components/Categories';
+//import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Products from './Components/Products';
 
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
     <Header />
     <Categories />
     <Products />
-    <Footer />
+    {/* <Footer /> */}
+  
     </>
   );
 }
