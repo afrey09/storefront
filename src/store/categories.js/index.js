@@ -1,14 +1,14 @@
 const initialState = {
   categories: [
-    {name: 'books', displayName: 'Books', description: 'Books'},
+    {name: 'electronics', displayName: 'Electronics', description: 'Electronics'},
     {name: 'food', displayName: 'Food', description: 'Food'},
   ],
   activeCategory: '',
 
   products: [
-    {name: 'book1', category: 'books', description: 'Cooking101', price: 10, inventorycount: 5},
-    {name: 'book2', category: 'books', description: 'Investing101', price: 20, inventorycount: 10},
-    {name: 'book3', category: 'books', description: 'Dogs101', price: 30, inventorycount: 15},
+    {name:'electronics1', category: 'electronics', description: 'TV', price: 100, inventorycount: 5},
+    {name: 'electronics2', category: 'electronics', description: 'Radio', price: 50, inventorycount: 10},
+    {name: 'electronics3', category: 'electronics', description: 'Computer', price: 150, inventorycount: 15},
     {name: 'food1', category: 'food', description: 'Pizza', price: 5, inventorycount: 20},
     {name: 'food2', category: 'food', description: 'Tacos', price: 10, inventorycount: 25},
     {name: 'food3', category: 'food', description: 'Burgers', price: 15, inventorycount: 30},
