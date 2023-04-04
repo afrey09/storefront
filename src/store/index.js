@@ -2,8 +2,10 @@ import { legacy_createStore as createStore, combineReducers } from "redux";
 import { composeWithDevTools } from '@redux-devtools/extension';
 import categoryReducer from "./store/categories";
 
+//Where store is created
+
 let reducers = combineReducers({
-  category: categoryReducer,
+  store: categoryReducer,
 });
 
 const store = () => {
