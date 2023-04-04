@@ -17,6 +17,7 @@ npm start
 
 ### UML
 
+![LAB 36 UML](/assets/storefrontUML.png)
 
 
 ### Collaborators
