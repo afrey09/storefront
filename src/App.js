@@ -1,8 +1,10 @@
+import Categories from './components/Categories';
+
 
 function App() {
   return (
     <>
-    <h1>Hello World</h1>
+    <Categories />
     </>
   );
 }
