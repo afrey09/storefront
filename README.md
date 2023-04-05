@@ -8,6 +8,8 @@ Author: Adrienne Frey
 
 Phase 1:  For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server.
 
+Phase 2: Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components.
+
 ### How to initialize/run application
 
 npm start
