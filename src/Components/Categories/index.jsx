@@ -1,12 +1,12 @@
 import { Button, ButtonGroup } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { set } from '../../store/categories.js';
+import { set } from '../../store/categories/index.js'
 // step 1: import the action
 
 
 const Categories = () => {
 
-  const { categories } = useSelector((state) => state);
+  const { categories } = useSelector((state) => state.categories);
   const dispatchEvent = useDispatch();
 
 
@@ -22,16 +22,16 @@ const Categories = () => {
             <Button
               key={`categories-${idx}`}
               onClick={() => handleChange(category)}
-             >
-                {category.displayName}
-              </Button>
-              ))
-          }
-        </ButtonGroup>
+            >
+              {category.displayName}
+            </Button>
+          ))
+        }
+      </ButtonGroup>
     </>
   )
 };
 
-      export default Categories;
+export default Categories;
 
 

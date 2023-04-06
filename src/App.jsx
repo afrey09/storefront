@@ -1,5 +1,4 @@
 import Categories from './Components/Categories';
-//import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Products from './Components/Products';
 
@@ -10,7 +9,6 @@ function App() {
     <Header />
     <Categories />
     <Products />
-    {/* <Footer /> */}
   
     </>
   );

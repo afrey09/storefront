@@ -20,8 +20,9 @@ const productReducer = (state = initialState, action) => {
     case 'SET':
       return initialState.filter(product => product.category === payload.name);
     case 'ADD_PRODUCT':
-      return initialState.map(product => product.name === payload.name ? product.inStock - 1 : product);
-
+      let activeCategory = payload.category;
+      console.warn('active category', activeCategory);
+  
       tempState = tempState.map(product => product.name === payload.name ? { ...product, inStock: product.inStock - 1 } : product);
 
       let results = tempState.filter(product => product.category === activeCategory);
