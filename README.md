@@ -1,4 +1,4 @@
-# LAB 36 - Storefront
+# LAB 36, 37, 38 - Storefront
 
 ## Project: ToDo-App
 
@@ -9,6 +9,8 @@ Author: Adrienne Frey
 Phase 1:  For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server.
 
 Phase 2: Continue work on the e-Commerce storefront, breaking up the store into multiple reducers and sharing functionality/data between components.
+
+Phase 3: We will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
 
 ### How to initialize/run application
 
@@ -24,4 +26,4 @@ npm start
 
 ### Collaborators
 
-Ryan Gallaway - based off of looking through his demo code, comparing to the lab and trying to construct it based on the lab instructions.
+Ryan Gallaway - based off of looking through his demo and code review code, comparing to the lab and trying to construct it based on the lab instructions.
