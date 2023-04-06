@@ -1,12 +1,12 @@
-import { Button } from '@mui/material';
+import { Button, ButtonGroup } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { set } from '../../store/categories.js';
 // step 1: import the action
 
 
-const Categories = ({ categories, set }) => {
- 
-  const { store } = useSelector((state) => state);
+const Categories = () => {
+
+  const { categories } = useSelector((state) => state);
   const dispatchEvent = useDispatch();
 
 
@@ -16,23 +16,22 @@ const Categories = ({ categories, set }) => {
   return (
     <>
       <h2>Browse Our Categories</h2>
-      
-          {
-            categories.map((category, idx) => (
-              <article key={`categories-${idx}`}>
-                <h5>{category.displayName} has {category.description}</h5>
-              <Button
-                color="primary"
-                variant="contained"
-                onClick={() => handleChange(category)}
-              > 
+      <ButtonGroup variant="text" aria-label="text button group">
+        {
+          categories.map((category, idx) => (
+            <Button
+              key={`categories-${idx}`}
+              onClick={() => handleChange(category)}
+             >
+                {category.displayName}
               </Button>
-          
-              </article>
-            ))
+              ))
           }
+        </ButtonGroup>
     </>
   )
 };
 
-export default Categories;
+      export default Categories;
+
+
