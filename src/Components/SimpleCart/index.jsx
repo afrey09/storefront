@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct } from '../../store/actions.js'
 
 const SimpleCart = () => {
-  const { cart } = useSelector(state => state.cart);
+  const { cart } = useSelector(state => state);
   const dispatch = useDispatch();
 
   return (

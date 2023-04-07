@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
   const { cart } = useSelector(state => state); 
+  console.log(cart);
 return (
   <>
   <Grid container p={2}>
@@ -10,7 +11,7 @@ return (
       <Typography variant="h4">Our Store</Typography>
     </Grid>
     <Grid item xs style={{textAlign: 'right', alignSelf: 'center'}}>
-      <Typography>CART ({cart.length})</Typography>
+      <Typography>CART ({cart ? cart.length: 0})</Typography>
     </Grid>
 
   </Grid>
