@@ -1,15 +1,31 @@
-import { useSelector } from 'react-redux';
+import { When } from 'react-if';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeProduct } from '../../store/actions.js'
 
-const Cart = () => {
+const SimpleCart = () => {
   const { cart } = useSelector(state => state.cart);
-  
-  return (
-    <ul>
-      {cart.map((item, idx) => (
-        <li key={idx}>{item.name}</li>
-      ))}
-    </ul>
-  )
-}
+  const dispatch = useDispatch();
 
-export default Cart;
+  return (
+    <When condition={cart.length > 0}>
+      <div className="simple-cart">
+        <ul>
+          {cart.map((item, idx) =>
+            <li key={`item${idx}`} className="item">
+              {item.name}
+              <span
+                onClick={() => dispatch(removeProduct(item))}
+                className="remove"
+              >
+                X
+              </span>
+            </li>
+          )}
+        </ul>
+        <div className="footer"></div>
+      </div>
+    </When>
+     )
+  };
+
+      export default SimpleCart;

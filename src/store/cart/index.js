@@ -6,12 +6,10 @@ const cartReducer = (state=initialState, action) => {
   switch (type) {
     case 'ADD_PRODUCT':
       return [...state, payload];
-      default:
-        return state;
-    // case 'REMOVE_PRODUCT':
-    //   return state.filter((item) => item !== payload);
-    // default:
-    //   return state;
+    case 'REMOVE_PRODUCT':
+      return state.filter(product => product.name !== payload.name);
+    default:
+      return state;
   }
 };
 

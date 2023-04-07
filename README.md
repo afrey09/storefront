@@ -12,6 +12,8 @@ Phase 2: Continue work on the e-Commerce storefront, breaking up the store into 
 
 Phase 3: We will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
 
+Phase 4: Complete work on the Virtual Store by adding detail pages for individual products as well as the the cart checkout page.
+
 ### How to initialize/run application
 
 npm start
