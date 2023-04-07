@@ -1,18 +1,20 @@
 import { Button, ButtonGroup } from '@mui/material';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { set } from '../../store/categories/index.js'
-// step 1: import the action
+import { get, select } from '../../store/actions.js'
 
 
 const Categories = () => {
 
   const { categories } = useSelector((state) => state.categories);
-  const dispatchEvent = useDispatch();
+  const dispatch = useDispatch();
 
 
-  const handleChange = (category) => {
-    dispatchEvent(set(category));
-  }
+  useEffect(() => {
+    dispatch(get('categories'))
+    dispatch(get('products'))
+  });
+
   return (
     <>
       <h2>Browse Our Categories</h2>
@@ -21,9 +23,9 @@ const Categories = () => {
           categories.map((category, idx) => (
             <Button
               key={`categories-${idx}`}
-              onClick={() => handleChange(category)}
+              onClick={() => dispatch(select(category))}
             >
-              {category.displayName}
+              {category.name}
             </Button>
           ))
         }

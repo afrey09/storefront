@@ -1,11 +1,16 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct } from '../../store/cart.js';
+import { addProduct, adjustInventory } from '../../store/actions';
 
 const Products = () => {
   const { products } = useSelector((state) => state);
   const { activeCategory } = useSelector((state) => state.categories)
-  const dispatchEvent = useDispatch();
+  const dispatch = useDispatch();
+
+  const addItemHandler = (product) => {
+    dispatch(addProduct(product));
+    dispatch(adjustInventory(product));
+  };
 
   return (
     <>
@@ -37,7 +42,7 @@ const Products = () => {
               <CardActions>
                 <Button
                   size="small"
-                  onClick={() => dispatchEvent(addProduct(product))}
+                  onClick={() => addItemHandler(product)}
                 >
                   Add to Cart
                 </Button>
